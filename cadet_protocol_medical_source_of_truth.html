@@ -1,0 +1,295 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.section { margin-bottom: 1.5rem; }
+.section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem; padding-bottom: 6px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.section-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+.badge { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; }
+.badge-confirmed { background: #EAF3DE; color: #3B6D11; }
+.badge-indicative { background: #FAEEDA; color: #854F0B; }
+.badge-gap { background: #FCEBEB; color: #A32D2D; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 12px; }
+.card-label { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 4px; }
+.card-value { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+.card-sub { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
+.tooth-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 13px; }
+.tooth-row:last-child { border-bottom: none; }
+.tooth-name { color: var(--color-text-secondary); }
+.tooth-pts { font-weight: 500; color: var(--color-text-primary); display: flex; align-items: center; gap: 6px; }
+.tooth-cond { font-size: 11px; color: var(--color-text-tertiary); }
+.pts-pill { display: inline-block; background: #E6F1FB; color: #185FA5; font-size: 11px; font-weight: 500; padding: 1px 7px; border-radius: 20px; }
+.pts-pill-2 { background: #EAF3DE; color: #3B6D11; }
+.hz-table { width: 100%; font-size: 12px; border-collapse: collapse; }
+.hz-table th { font-weight: 500; font-size: 11px; color: var(--color-text-secondary); text-align: left; padding: 5px 8px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.hz-table td { padding: 6px 8px; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-primary); }
+.hz-table tr:last-child td { border-bottom: none; }
+.hz-table .freq-cell { color: var(--color-text-secondary); font-size: 11px; }
+.warn-box { background: #FAEEDA; border: 0.5px solid #EF9F27; border-radius: var(--border-radius-md); padding: 8px 12px; font-size: 12px; color: #854F0B; margin-top: 8px; }
+.vision-table { width: 100%; font-size: 12px; border-collapse: collapse; }
+.vision-table th { font-weight: 500; font-size: 11px; color: var(--color-text-secondary); padding: 5px 8px; text-align: left; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.vision-table td { padding: 6px 8px; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-primary); }
+.vision-table tr:last-child td { border-bottom: none; }
+.tag-strict { font-size: 10px; background: #FAECE7; color: #993C1D; padding: 1px 6px; border-radius: 20px; }
+.tag-relaxed { font-size: 10px; background: #E1F5EE; color: #0F6E56; padding: 1px 6px; border-radius: 20px; }
+.alert-red { background: #FCEBEB; border: 0.5px solid #F09595; border-radius: var(--border-radius-md); padding: 8px 12px; font-size: 12px; color: #A32D2D; margin-top: 8px; }
+.legend { display: flex; gap: 12px; margin-bottom: 1rem; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--color-text-secondary); }
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot-c { background: #3B6D11; }
+.dot-i { background: #854F0B; }
+.dot-g { background: #A32D2D; }
+.mono { font-family: var(--font-mono); }
+</style>
+
+<div style="padding: 1rem 0;">
+
+<div style="margin-bottom: 1rem;">
+  <div style="font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px;">CADET PROTOCOL — ALPHA UNIT</div>
+  <div style="font-size: 18px; font-weight: 500; color: var(--color-text-primary);">AFMS Medical Engine: Source of Truth</div>
+  <div style="font-size: 12px; color: var(--color-text-secondary); margin-top: 2px;">Indian Defence Medical Standards · 2024-2025</div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="dot dot-c"></div> Source: Confirmed</div>
+  <div class="legend-item"><div class="dot dot-i"></div> Source: Indicative</div>
+  <div class="legend-item"><div class="dot dot-g"></div> Data Gap — Needs PIB/Gazette verification</div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">01 · Dental Points Formula</div>
+    <span class="badge badge-confirmed">Confirmed</span>
+  </div>
+  <div class="grid-2" style="margin-bottom: 10px;">
+    <div class="card">
+      <div class="card-label">Minimum required</div>
+      <div class="card-value">14 points</div>
+      <div class="card-sub">Disqualified below this threshold</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Maximum possible</div>
+      <div class="card-value">22 points</div>
+      <div class="card-sub">When all 32 teeth present (excl. 3rd molars if undeveloped)</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="tooth-row">
+      <span class="tooth-name">Incisors (8 teeth × 1 pt)</span>
+      <span class="tooth-pts"><span class="pts-pill">1 pt each</span></span>
+    </div>
+    <div class="tooth-cond" style="padding: 2px 0 6px; font-size: 11px; color: var(--color-text-tertiary);">Condition: corresponding lower teeth must be present</div>
+    <div class="tooth-row">
+      <span class="tooth-name">Canines (4 teeth × 1 pt)</span>
+      <span class="tooth-pts"><span class="pts-pill">1 pt each</span></span>
+    </div>
+    <div class="tooth-cond" style="padding: 2px 0 6px; font-size: 11px; color: var(--color-text-tertiary);">Condition: corresponding lower teeth must be present</div>
+    <div class="tooth-row">
+      <span class="tooth-name">1st &amp; 2nd Premolars (8 teeth × 1 pt)</span>
+      <span class="tooth-pts"><span class="pts-pill">1 pt each</span></span>
+    </div>
+    <div class="tooth-cond" style="padding: 2px 0 6px; font-size: 11px; color: var(--color-text-tertiary);">Condition: corresponding lower teeth must be present</div>
+    <div class="tooth-row">
+      <span class="tooth-name">1st &amp; 2nd Molars (4 teeth × 2 pts)</span>
+      <span class="tooth-pts"><span class="pts-pill pts-pill-2">2 pts each</span></span>
+    </div>
+    <div class="tooth-cond" style="padding: 2px 0 6px; font-size: 11px; color: var(--color-text-tertiary);">Condition: must be in good opposition to corresponding lower jaw teeth</div>
+    <div class="tooth-row">
+      <span class="tooth-name">3rd Molar (Wisdom) — well developed</span>
+      <span class="tooth-pts"><span class="pts-pill pts-pill-2">2 pts</span></span>
+    </div>
+    <div class="tooth-row">
+      <span class="tooth-name">3rd Molar (Wisdom) — underdeveloped</span>
+      <span class="tooth-pts"><span class="pts-pill">1 pt</span></span>
+    </div>
+    <div class="tooth-cond" style="padding: 2px 0 6px; font-size: 11px; color: var(--color-text-tertiary);">'Well-opposed' means tooth from upper jaw makes functional contact with lower jaw counterpart in biting position</div>
+  </div>
+  <div class="warn-box" style="margin-top: 8px;">Severe pyorrhoea, untreated active caries, or mobile teeth = disqualification even if 14-point threshold is met. All counted teeth must be sound and repairable.</div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">02 · Hearing Thresholds (PTA)</div>
+    <span class="badge badge-indicative" style="margin-right:4px;">Partially Confirmed</span>
+    <span class="badge badge-gap">Gap: Army dB matrix</span>
+  </div>
+  <table class="hz-table">
+    <thead>
+      <tr>
+        <th>Entry / Branch</th>
+        <th>Freq Range</th>
+        <th>Max dB Loss</th>
+        <th>Test Method</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:500;">Army — NDA/CDS/IMA</td>
+        <td class="freq-cell">250–8000 Hz</td>
+        <td style="color: #185FA5; font-weight:500;">Forced whisper @ 610 cm</td>
+        <td class="freq-cell">Clinical whisper test</td>
+        <td><span class="badge badge-confirmed">Confirmed</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">Air Force — NDA (AF wing)</td>
+        <td class="freq-cell">250–8000 Hz</td>
+        <td style="color: #185FA5; font-weight:500;">≤ 20 dB at all freqs</td>
+        <td class="freq-cell">PTA Audiometry</td>
+        <td><span class="badge badge-confirmed">Confirmed</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">Air Force — AFCAT Flying</td>
+        <td class="freq-cell">250–8000 Hz</td>
+        <td style="color: #185FA5; font-weight:500;">≤ 20 dB (IAP 4303)</td>
+        <td class="freq-cell">PTA Audiometry</td>
+        <td><span class="badge badge-indicative">Indicative</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">4000 Hz — Noise Notch</td>
+        <td class="freq-cell">4000 Hz only</td>
+        <td style="color: #A32D2D; font-weight:500;">≤ 45 dB (aviation std)</td>
+        <td class="freq-cell">PTA Audiometry</td>
+        <td><span class="badge badge-gap">Needs Gazette</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="alert-red">Army does not routinely publish per-frequency PTA dB tables in public notifications. The whisper-at-610cm standard is the official documented test. Exact per-Hz audiogram cutoffs for Army are NOT confirmed from official source and must be sourced from DGMS Technical Instructions or AFI 2001.</div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">03 · BMI &amp; Height-Weight Matrix</div>
+    <span class="badge badge-indicative">Indicative</span>
+  </div>
+  <div style="margin-bottom: 10px;">
+    <table class="vision-table">
+      <thead>
+        <tr>
+          <th>Height (cm)</th>
+          <th>Ideal Wt (kg) — Age 15-17</th>
+          <th>Ideal Wt (kg) — Age 18-20</th>
+          <th>Ideal Wt (kg) — Age 20-22</th>
+          <th>±SD Tolerance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">152</td><td>44 – 48</td><td>46 – 50</td><td>48 – 52</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">155</td><td>46 – 50</td><td>48 – 52</td><td>50 – 55</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">160</td><td>49 – 54</td><td>51 – 56</td><td>53 – 58</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">163</td><td>51 – 56</td><td>53 – 58</td><td>55 – 61</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">165</td><td>53 – 58</td><td>55 – 61</td><td>57 – 63</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">168</td><td>55 – 61</td><td>58 – 63</td><td>60 – 66</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">170</td><td>57 – 63</td><td>60 – 66</td><td>62 – 69</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">173</td><td>60 – 66</td><td>62 – 69</td><td>65 – 72</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">175</td><td>62 – 69</td><td>65 – 72</td><td>67 – 74</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">178</td><td>65 – 72</td><td>67 – 74</td><td>70 – 77</td><td>± 1 SD</td></tr>
+        <tr><td class="mono">180</td><td>67 – 74</td><td>70 – 77</td><td>72 – 80</td><td>± 1 SD</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="warn-box">These ranges are INDICATIVE — derived from historical AFMS appendix data and general Ht-Wt charts. The official matrix is published as 'Appendix B' in AFCAT notifications and as an attached chart in NDA/CDS official notifications. You MUST cross-verify against the current notification PDF. AFCAT 2024 BMI override: if above limit but BMI &lt; 27, waist &lt; 94 cm (male), WHR &lt; 0.9 — candidate may still pass.</div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">04 · Vision &amp; Refractive Error Standards</div>
+    <span class="badge badge-confirmed">Mostly Confirmed</span>
+  </div>
+  <table class="vision-table">
+    <thead>
+      <tr>
+        <th>Entry / Branch</th>
+        <th>Distant Vision</th>
+        <th>Near Vision</th>
+        <th>Myopia (max)</th>
+        <th>Hypermetropia (max)</th>
+        <th>Astigmatism</th>
+        <th>Colour Vision</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:500;">Army — NDA/CDS<br><span style="font-size:11px;color:var(--color-text-tertiary);">Male officer entry</span></td>
+        <td>6/6 (corrected)</td>
+        <td>N6</td>
+        <td style="color:#A32D2D;">-3.5 D</td>
+        <td>+3.5 D</td>
+        <td>Incl. in above</td>
+        <td>CP-III</td>
+        <td><span class="badge badge-confirmed">Confirmed</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">Army — Women entry</td>
+        <td>6/6 better eye, 6/18 worse</td>
+        <td>—</td>
+        <td style="color:#A32D2D;">-5.5 D (incl. astigmatism)</td>
+        <td>—</td>
+        <td>Incl. in myopia</td>
+        <td>CP-III</td>
+        <td><span class="badge badge-confirmed">Confirmed</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">Navy — NDA/CDS <br><span style="font-size:11px;color:var(--color-text-tertiary);">General entry</span></td>
+        <td>6/6 uncorrected</td>
+        <td>N5</td>
+        <td style="color:#A32D2D;">-0.75 D</td>
+        <td>+1.5 D</td>
+        <td>—</td>
+        <td>CP-I</td>
+        <td><span class="badge badge-indicative">Indicative</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">IAF — NDA (AF wing)<br><span style="font-size:11px;color:var(--color-text-tertiary);">Flying/Pilot</span></td>
+        <td>6/12 uncorr → 6/6 corr</td>
+        <td>N5</td>
+        <td style="color:#A32D2D; font-weight:500;">-0.75 D <span class="tag-strict">strict</span></td>
+        <td>+1.5 D</td>
+        <td>≤ ±1.0 D</td>
+        <td>CP-I (MLT)</td>
+        <td><span class="badge badge-confirmed">Confirmed</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">IAF — AFCAT Flying<br><span style="font-size:11px;color:var(--color-text-tertiary);">Pilot/Navigator</span></td>
+        <td>6/6 one eye, 6/9 other</td>
+        <td>N5</td>
+        <td style="color:#A32D2D; font-weight:500;">-0.5 D <span class="tag-strict">strictest</span></td>
+        <td>+2.0 D</td>
+        <td>≤ +1.75 D</td>
+        <td>CP-I (MLT)</td>
+        <td><span class="badge badge-confirmed">Confirmed</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">IAF — AFCAT Technical</td>
+        <td>6/9 → 6/6 corrected</td>
+        <td>N5</td>
+        <td>-3.5 D <span class="tag-relaxed">relaxed</span></td>
+        <td>+3.5 D</td>
+        <td>≤ ±2.5 D</td>
+        <td>CP-II</td>
+        <td><span class="badge badge-confirmed">Confirmed</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;">IAF — AFCAT Ground Duty<br><span style="font-size:11px;color:var(--color-text-tertiary);">Admin/Education/Accounts</span></td>
+        <td>6/9 → 6/6 corrected</td>
+        <td>N6</td>
+        <td>-3.5 D <span class="tag-relaxed">relaxed</span></td>
+        <td>+3.5 D</td>
+        <td>≤ ±2.5 D</td>
+        <td>CP-III</td>
+        <td><span class="badge badge-confirmed">Confirmed</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="warn-box" style="margin-top: 8px;">LASIK eligibility key flags: Min age 20 yrs · 12 months post-op stability · Corneal thickness ≥ 450 microns · Pre-LASIK refractive error must have been ≤ 6D · Axial length ≤ 25.5 mm · RK surgery = PERMANENT DISQUALIFICATION across all branches.</div>
+</div>
+
+<div style="border-top: 0.5px solid var(--color-border-tertiary); padding-top: 12px; margin-top: 0.5rem; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+  <div style="font-size: 11px; color: var(--color-text-tertiary);">Sources: AFCAT Official Medical Standards (cdac.in) · NDA Notification UPSC · IAP 4303 4th Ed · AFMM · DGMS Circulars</div>
+  <button onclick="sendPrompt('Now convert this data into the JSON structure for the CADET PROTOCOL medical engine')" style="font-size: 12px; padding: 5px 12px;">Convert to JSON ↗</button>
+</div>
+
+</div>

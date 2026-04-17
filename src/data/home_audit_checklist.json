@@ -1,0 +1,55 @@
+{
+  "cadet_protocol_audit": {
+    "version": "AFMS_2024-25",
+    "last_updated": "2024",
+    "categories": [
+      {
+        "category_id": "CAT-1",
+        "category_name": "Biometric Input (Measured by User)",
+        "criteria": [
+          {
+            "id": "BIO-001",
+            "parameter": "Height",
+            "rejection_thresholds": {
+              "NDA_male": { "min_cm": 157 },
+              "AFCAT_male_flying": { "min_cm": 162.5, "max_cm": 196 }
+            }
+          },
+          {
+            "id": "BIO-004",
+            "parameter": "Chest Measurement",
+            "rejection_thresholds": { "min_unexpanded": 77, "min_expansion": 5 }
+          }
+        ]
+      },
+      {
+        "category_id": "CAT-2",
+        "category_name": "Visual / Computer Vision Inputs",
+        "criteria": [
+          { "id": "VIS-001", "parameter": "Knock Knee", "threshold_cm": 8 },
+          { "id": "VIS-003", "parameter": "Flat Foot", "threshold_ratio": 0.1 }
+        ]
+      },
+      {
+        "category_id": "CAT-3",
+        "category_name": "Self-Reported History",
+        "criteria": [
+          { "id": "QST-001", "parameter": "Epilepsy", "severity": "CRITICAL" },
+          { "id": "QST-003", "parameter": "Surgical History", "severity": "HIGH" },
+          { "id": "QST-004", "parameter": "Metal Implants", "severity": "CRITICAL" }
+        ]
+      },
+      {
+        "category_id": "CAT-4",
+        "category_name": "Self-Administered Tests",
+        "criteria": [
+          { "id": "SAT-001", "parameter": "Hearing (610cm)", "threshold": 4 },
+          { "id": "SAT-008", "parameter": "Blood Pressure", "threshold": 140 }
+        ]
+      }
+    ],
+    "global_logic": {
+      "disclaimer": "CADET PROTOCOL is a preliminary self-audit tool. It does NOT replace formal AFMS medical examination at SSB/AFSB/INS Hospitals. Final fitness determination rests solely with the examining Medical Officer."
+    }
+  }
+}

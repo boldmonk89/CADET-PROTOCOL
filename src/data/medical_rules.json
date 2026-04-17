@@ -1,0 +1,19 @@
+{
+  "standards": {
+    "SYSTEMIC_STANDARDS": {
+      "ENT": {
+        "rejection": ["Hearing < 610cm", "Tympanosclerosis", "Otitis Media", "Tympanoplasty"]
+      },
+      "CARDIOVASCULAR": {
+        "rejection": ["Bradycardia < 40 bpm", "Tachycardia > 100 bpm", "Hypertension > 140/90"]
+      },
+      "DERMATOLOGICAL": {
+        "rejection": ["Vitiligo", "Keloid", "Psoriasis", "Ichthyosis"]
+      }
+    },
+    "SURGERY_FITNESS_TIMELINES": {
+      "Appendicectomy": { "weeks_to_fit": 4, "note": "Laparoscopic" },
+      "Hernia": { "weeks_to_fit": 24, "note": "Anterior Wall" }
+    }
+  }
+}

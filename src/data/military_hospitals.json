@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Army Hospital (Research & Referral)",
+    "branch": "ARMY",
+    "location": "New Delhi",
+    "address": "Near Dhaula Kuan, Delhi Cantonment, New Delhi - 110010"
+  },
+  {
+    "name": "INHS Asvini",
+    "branch": "NAVY",
+    "location": "Mumbai",
+    "address": "Near RC Church, Colaba, Mumbai, Maharashtra - 400005"
+  },
+  {
+    "name": "Command Hospital (Air Force)",
+    "branch": "AIR_FORCE",
+    "location": "Bangalore",
+    "address": "Old Airport Road, Agaram Post, Bangalore - 560007"
+  }
+]

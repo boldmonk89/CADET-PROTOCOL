@@ -1,0 +1,26 @@
+{
+  "gazette": {
+    "version": "2024-25",
+    "entries": [
+      {
+        "id": "NDA_NA",
+        "title": "NDA / NA (10+2 Entry)",
+        "subsections": [
+          { "id": "ARMY", "title": "Army Medical Standards", "para_refs": "6-12" },
+          { "id": "NAVY", "title": "Navy Medical Standards (Annexure B)", "para_refs": "371-793" },
+          { "id": "AIR_FORCE", "title": "Air Force Medical Standards (Annexure C)", "para_refs": "794+" }
+        ]
+      },
+      {
+        "id": "CDS_GRAD",
+        "title": "CDS / Graduate Entries (IMA/OTA/AFA/INA)",
+        "subsections": [
+          { "id": "ARMY", "title": "Army (IMA/OTA) Vision & Height", "para_refs": "Para 9, 13" },
+          { "id": "NAVY", "title": "Naval Graduate Entry Rules", "para_refs": "Annexure B, Para 4" },
+          { "id": "AIR_FORCE", "title": "AFCAT / MET Officers", "para_refs": "Annexure C, General" }
+        ]
+      }
+    ],
+    "disclaimer": "EXTRACTED RAW FROM OFFICIAL GAZETTE. NO CHANGES MADE TO POLICY TEXT."
+  }
+}
