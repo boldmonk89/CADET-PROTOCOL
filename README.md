@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CADET PROTOCOL 🎖️
 ### AI-Powered Medical & Psychological Audit for Defence Aspirants
 
@@ -17,3 +18,6 @@
 
 ---
 *Created by Antigravity for the Defence Fraternity.*
+=======
+# CADET-PROTOCOL
+>>>>>>> 3851838dbb01cfbe83093e924689a75d89fc9389
